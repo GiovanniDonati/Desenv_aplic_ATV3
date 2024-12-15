@@ -14,16 +14,18 @@
   </head>
 
   <body>
-    <h2>Funcionário: {{ fun.nome }}</h2>
-    <li>CPF: {{ fun.cpf }}</li>
-    <li>E-mail: {{ fun.email }}</li>
-    <li>Remuneração: {{ fun.remuneracao }}</li>
+    <h2>Funcionário: {{ funcionario.nome }}</h2>
+    <li>CPF: {{ funcionario.cpf }}</li>
+    <li>E-mail: {{ funcionario.email }}</li>
+    <li>Remuneração: {{ funcionario.remuneracao }}</li>
 
     <form method="post">
       {% csrf_token %}
+      <input type="hidden" name="funcionario_id" value="{{ funcionario.id }}" />
       <button type="button" class="btn btn-success" onClick="history.go(-1)">
         Voltar
       </button>
+      <button type="submit" class="btn btn-danger">Remover</button>
     </form>
   </body>
 </html>
